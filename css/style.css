@@ -1,0 +1,46 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --backgroundColor:#fff080 ;
+}
+
+body {
+    background-color: var(--backgroundColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.ripple {
+    border: none;
+    padding: 10px 20px;
+    background-color: tomato;
+    border-radius: 7px;
+    position: relative;
+}
+
+
+.circle {
+    height: 50px;
+    top: 30px;
+    left: 30px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    animation: circle .4s ease-in-out ;
+    transform: translate(-50px,-50px) scale(0);
+    opacity: 0;
+    transition: transform .4s ease-in;
+}
+
+@keyframes circle {
+    to {
+        transform: translate(-50%,-50%) scale(2);
+        opacity: 1;
+    }
+}
